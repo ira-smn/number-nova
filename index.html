@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Quest</title>
+</head>
+<body>
+    <h1>Welcome to Number Quest!</h1>
+    <p>My first game website!</p>
+
+
+<button onclick="
+   let level = prompt('Choose level: 1=Easy, 2=Medium, 3=Hard');
+if (level === null) return;
+let maxNumber = 10;
+if (level === '2') maxNumber = 50;
+if (level === '3') maxNumber = 100;
+   let secretNumber = Math.floor(Math.random() * maxNumber) + 1;
+let guess = '';
+   let attempts = 0;
+let maxAttempts = 5;
+if (level === '2' || level === '3') maxAttempts = 7;
+while (Number(guess) !== secretNumber && attempts < maxAttempts) {
+       guess = prompt('Guess a number between 1 and ' + maxNumber + ':');
+        if (guess === null) break;
+        attempts = attempts + 1;
+       
+    
+         if (Number(guess) === secretNumber) alert('You win!');
+        else if (Number(guess) < secretNumber) alert('Too low!');
+        else alert('Too high!');
+   if (guess !== null && attempts === maxAttempts && Number(guess) !== secretNumber) {
+    alert('Game Over! The secret number was ' + secretNumber);
+}
+    }
+">Start Game</button>
+
+
+<script>
+    
+</script>
+
+</body>
+</html>
